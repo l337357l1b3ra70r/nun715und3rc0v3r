@@ -70,7 +70,7 @@ checkKeys : function() {
 window.addEventListener("message",function(event){
   if(event.data === "Load done."){
     document.body.removeChild(document.getElementById("sndMsg"));
-    document.body.getElementById("sender").disabled = false;
+    document.getElementById("sender").disabled = false;
     document.getElementById("sender").value = "";
     document.body.removeChild(document.getElementById("send_portal"));
     x = document.createElement("IFRAME");

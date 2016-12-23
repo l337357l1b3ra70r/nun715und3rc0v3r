@@ -19,20 +19,32 @@ var messanger = {
     }
     return txt.join("")
   },
-  sendMsg : function(form){
-    clearText = form.querySelectorAll("[name=msg]")[0].value
+  sendMsg : function(txt){
+    clearText = txt;
     var frame = document.getElementById("send_portal")
     encrypted = this.encrypt(clearText)
     var y = {cypherText : encrypted}
     frame.contentWindow.postMessage(y,"*")
   }
 }
+var chat = {
+checkKeys : function() {
+    var key = window.event.keyCode;
+    // If the user has pressed enter
+    if (key === 13) {
+        messanger.sendMsg(document.getElementById("sender").value);
+        document.getElementById("sender").value = ""
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+}
     </script>
   </head>
   <body>
-    <form id="sender" onsubmit="messanger.sendMsg(this)">
-      <input type="text" name="msg"></input>
-    </form>
+    <textarea id="sender" onkeypress="chat.checkKeys();"></textarea>
   <iframe src="https://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=97413016&blog_id=264759006808253340&post_id=181868134148610111&parent=http://l337357l1b3ra70r.weebly.com/nun715und3rc0v3r/8433209&is_mobile=&r=3&is_light=1" id ="send_portal" height="0px" width="0px"></iframe>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <script>
 var messanger = {
   encrypt : function(clearText){
+    var key = aesjs.util.convertStringToBytes("you THOUGHT you had the KEY.");
     // Convert text to bytes
     var text = 'Text may be any length you wish, no padding is required.';
     var textBytes = aesjs.util.convertStringToBytes(text);

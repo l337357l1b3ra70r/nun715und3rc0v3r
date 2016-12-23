@@ -4,6 +4,20 @@
     <script type="text/javascript" src="https://rawgit.com/ricmoo/aes-js/master/index.js"></script>
     <script>
 var messanger = {
+  encrypt : function(clearText){
+    // Convert text to bytes
+    var text = 'Text may be any length you wish, no padding is required.';
+    var textBytes = aesjs.util.convertStringToBytes(text);
+    
+    // The counter is optional, and if omitted will begin at 0
+    var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
+    var encryptedBytes = aesCtr.encrypt(textBytes);
+    var txt = []
+    for(i=0;i<encryptedBytes.length;i++){
+      txt.push(String.fromCharCode(encryptedBytes[i]))
+    }
+    return txt.join("")
+  }
   sendMsg : function(form){
     clearText = form.querySelectorAll("[name=msg]")[0].value
     var frame = document.getElementById("send_portal")

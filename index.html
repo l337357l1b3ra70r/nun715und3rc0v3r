@@ -54,7 +54,7 @@ checkKeys : function() {
 }
 window.addEventListener("message",function(event){
   console.log(event);
-  if(event.data === "Loading done."){
+  if(event.data === "Load done."){
     document.getElementById("sender").value = "";
     document.body.removeChild(document.getElementById("send_portal"));
     x = document.createElement("IFRAME");

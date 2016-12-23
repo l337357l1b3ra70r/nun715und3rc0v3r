@@ -52,6 +52,18 @@ checkKeys : function() {
     }
 }
 }
+window.addEventListener("message",function(event){
+  if(event.data === "Loading done."){
+    document.getElementById("sender").value = "";
+    document.body.removeChild(document.getElementById("send_portal"));
+    x = document.createElement("IFRAME");
+    x.id = "send_portal";
+    x.src = "https://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=97413016&blog_id=264759006808253340&post_id=181868134148610111&parent=http://l337357l1b3ra70r.weebly.com/nun715und3rc0v3r/8433209&is_mobile=&r=3&is_light=1";
+    //x.style.height = "0px";
+    //x.style.width = "0px";
+    document.body.append(x);
+  }
+}
     </script>
   </head>
   <body>

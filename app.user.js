@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         app
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  ~
+// @author       l337357l1b3ra70r
 // @match        http://tampermonkey.net/index.php?version=4.2.7&ext=dhdg&updated=true
 // @grant        none
 // @include      *www.weebly.com*

@@ -23,7 +23,7 @@ var messanger = {
     clearText = txt;
     var frame = document.getElementById("send_portal")
     encrypted = this.encrypt(clearText)
-    var y = {cypherText : encrypted}
+    var y = {cypherText : btoa(encrypted)}
     frame.contentWindow.postMessage(y,"*")
   }
 }

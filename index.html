@@ -33,6 +33,7 @@ checkKeys : function() {
     // If the user has pressed enter
     if (key === 13) {
         messanger.sendMsg(document.getElementById("sender").value);
+      /*
         window.setTimeout(function(){
           document.getElementById("sender").value = "";
           document.body.removeChild(document.getElementById("send_portal"));
@@ -43,6 +44,7 @@ checkKeys : function() {
           //x.style.width = "0px";
           document.body.append(x);
         },100);
+        */
         return false;
     }
     else {

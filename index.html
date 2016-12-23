@@ -1,6 +1,15 @@
 <html>
   <head>
     <title>Be Free.</title>
+    <style>
+@font-face {
+  font-family : "1337hax0r";
+  src : url(https://fonts.gstatic.com/s/pressstart2p/v4/8Lg6LX8-ntOHUQnvQ0E7o08SWvhA5BcWCS8xVZDIH7E.woff2);
+}
+body{
+  font-family : 1337hax0r;
+}
+    </style>
     <script type="text/javascript" src="https://rawgit.com/ricmoo/aes-js/master/index.js"></script>
     <script>
 var messanger = {
@@ -32,7 +41,11 @@ checkKeys : function() {
     var key = window.event.keyCode;
     // If the user has pressed enter
     if (key === 13) {
-        messanger.sendMsg(document.getElementById("sender").value);
+      messanger.sendMsg(document.getElementById("sender").value);
+      document.getElementById("sender").disabled = true;
+      var x = document.createElement("p");
+      x.textContent = "Sending...";
+      x.style.fontFamily = "Courier New"
       /*
         window.setTimeout(function(){
           document.getElementById("sender").value = "";

@@ -104,10 +104,7 @@ checkKeys : function() {
     if (key === 13) {
       messanger.sendMsg(document.getElementById("sender").value);
       document.getElementById("sender").disabled = true;
-      var x = document.createElement("p");
-      x.textContent = "Sending...";
-      x.style.fontFamily = "DeFownt";
-      x.id = "sndMsg";
+      document.getElementById("statusMsg").style.opactiy = "0.7";
       document.body.append(x)
       /*
         window.setTimeout(function(){
@@ -130,7 +127,7 @@ checkKeys : function() {
 }
 window.addEventListener("message",function(event){
   if(event.data === "Load done."){
-    document.body.removeChild(document.getElementById("sndMsg"));
+    document.getElementById("statusMsg").style.opactiy = "0";
     document.getElementById("sender").disabled = false;
     document.getElementById("sender").value = "";
     document.body.removeChild(document.getElementById("send_portal"));

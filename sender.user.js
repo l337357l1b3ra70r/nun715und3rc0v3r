@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         app
+// @name         sender
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  ~

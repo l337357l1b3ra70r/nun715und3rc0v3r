@@ -109,7 +109,6 @@ var messanger = {
     document.body.append(x);
   },
   parseComments : function(comments){
-    console.log("YOOO");
     console.log(comments);
   }
 }
@@ -156,7 +155,6 @@ window.addEventListener("message",function(event){
   }
   if(event.data.msg === "comments"){
     document.body.removeChild(document.getElementById("hwin"));
-    console.log("Triggered.");
     messanger.parseComments(event.data.comments);
   }
 });

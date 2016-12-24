@@ -13,23 +13,33 @@ body{
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  height: 60%;
+  height: 80%;
   background: black; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(black,green); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(black,green); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(black,green); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(black,green); /* Standard syntax */
+  background: -webkit-radial-gradient(black,black,green); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(black,black,green); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(black,black,green); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(black,black,green); /* Standard syntax */
   border-radius: 15px;
+}
+#hist-container{
+  width:80%;
+  height:70%;
+  background: red;
+  margin-left: auto;
+  margin-right: auto;
+  top:5%;
+  position: relative;
+  border-radius: 30px;
 }
 #entry{
   background: #4cff00;
   text-align: center;
   width:80%;
   height:30px;
-  top:80%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-top:6%;
   border-radius: 5px;
 }
 #sender{
@@ -117,7 +127,7 @@ window.addEventListener("message",function(event){
   </head>
   <body>
     <div id="chat">
-      <div id="hist">
+      <div id="hist-container">
       </div>
       <div id="entry">
         <textarea id="sender" onkeypress="chat.checkKeys();" style="resize:none;"></textarea>

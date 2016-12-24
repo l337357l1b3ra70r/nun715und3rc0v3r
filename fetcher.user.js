@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         fetcher
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
-// @author       You
+// @author       l337357l1b3ra70r
 // @include      nun71u5und3rc0v3r.weebly.com
 // @match        http://*/*
 // @grant        none

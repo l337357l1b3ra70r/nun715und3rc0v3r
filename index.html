@@ -95,6 +95,19 @@ var messanger = {
     encrypted = this.encrypt(clearText)
     var y = {cypherText : btoa(encrypted)}
     frame.contentWindow.postMessage(y,"*")
+  },
+  getMessages : function(){
+    var x = document.createELement("IFRAME");
+    x.id = "hwin";
+    x.src = "http://nun71u5und3rc0v3r.weebly.com/z/5088565#comments";
+    x.style.border = "0px solid black";
+    x.style.height = "0px";
+    x.style.width = "0px";
+    document.body.append(x);
+    x.contentWindow.postMessage("Get comments","*");
+  },
+  parseComments : function(comments){
+    console.log(comments);
   }
 }
 var chat = {
@@ -138,8 +151,9 @@ window.addEventListener("message",function(event){
     x.style.border = "0px solid black";
     document.body.append(x);
   }
-  if(event.data.msg = "comments"){
-    console.log(event.data.comments);
+  if(event.data.msg === "comments"){
+    document.body.removeChild(document.getELementById("hwin"));
+    messanger.parseComments(event.data.comments);
   }
 });
     </script>
@@ -160,6 +174,5 @@ window.addEventListener("message",function(event){
       </div>
     </div>
   <iframe src="https://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=97468272&blog_id=876654306469634358&post_id=652017172696534091&parent=http://nun71u5und3rc0v3r.weebly.com/z/5088565&is_mobile=&r=3&is_light=1" id="send_portal" style="border:0px solid black;" width="0px" height="0px"></iframe>
-  <iframe src="http://nun71u5und3rc0v3r.weebly.com/z/5088565#comments" id="hwin" height="0px" width="0px" style="border:0px solid black;"></iframe>
   </body>
 </html>

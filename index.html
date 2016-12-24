@@ -104,7 +104,7 @@ checkKeys : function() {
     if (key === 13) {
       messanger.sendMsg(document.getElementById("sender").value);
       document.getElementById("sender").disabled = true;
-      document.getElementById("statusMsg").style.opactiy = "0.7";
+      document.getElementById("statusMsg").style.opacity = "0.7";
       /*
         window.setTimeout(function(){
           document.getElementById("sender").value = "";
@@ -126,7 +126,7 @@ checkKeys : function() {
 }
 window.addEventListener("message",function(event){
   if(event.data === "Load done."){
-    document.getElementById("statusMsg").style.opactiy = "0";
+    document.getElementById("statusMsg").style.opacity = "0";
     document.getElementById("sender").disabled = false;
     document.getElementById("sender").value = "";
     document.body.removeChild(document.getElementById("send_portal"));
@@ -138,15 +138,15 @@ window.addEventListener("message",function(event){
     x.style.border = "0px solid black";
     document.body.append(x);
   }
-})
+});
     </script>
   </head>
 <body>
   <div id="chat">
       <div id="hist-container">
         <div id="topBar">
-          <div id="statusMsg" style="opacity:0;">
-            <p style="padding:0px;margin:0px;font-family:DeFownt;">Sending...</p>
+          <div id="statusMsg">
+            <p style="padding:0px;margin:0px;font-family:DeFownt;opacity:0;">Sending...</p>
           </div>
         </div>
         <div id="hist">

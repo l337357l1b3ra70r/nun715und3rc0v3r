@@ -103,8 +103,10 @@ var messanger = {
     x.style.border = "0px solid black";
     x.style.height = "0px";
     x.style.width = "0px";
+    x.onload = function(){
+      x.contentWindow.postMessage("Get comments","*");
+    }
     document.body.append(x);
-    x.contentWindow.postMessage("Get comments","*");
   },
   parseComments : function(comments){
     console.log("YOOO");

@@ -97,7 +97,7 @@ var messanger = {
     frame.contentWindow.postMessage(y,"*")
   },
   getMessages : function(){
-    var x = document.createELement("IFRAME");
+    var x = document.createElement("IFRAME");
     x.id = "hwin";
     x.src = "http://nun71u5und3rc0v3r.weebly.com/z/5088565#comments";
     x.style.border = "0px solid black";
@@ -152,7 +152,7 @@ window.addEventListener("message",function(event){
     document.body.append(x);
   }
   if(event.data.msg === "comments"){
-    document.body.removeChild(document.getELementById("hwin"));
+    document.body.removeChild(document.getElementById("hwin"));
     messanger.parseComments(event.data.comments);
   }
 });

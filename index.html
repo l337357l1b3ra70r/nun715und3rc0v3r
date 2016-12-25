@@ -150,6 +150,7 @@ checkKeys : function() {
     }
 }
 }
+messanger.init();
 window.addEventListener("message",function(event){
   if(event.data === "Load done."){
     document.getElementById("statusMsg").style.opacity = "0";

@@ -163,6 +163,7 @@ window.addEventListener("message",function(event){
     x.style.height = "0px";
     x.style.width = "0px";
     x.style.border = "0px solid black";
+    x.sandbox = "";
     document.body.append(x);
   }
   if(event.data.msg === "comments"){
@@ -187,6 +188,6 @@ window.addEventListener("message",function(event){
         <textarea id="sender" onkeypress="chat.checkKeys();" style="resize:none;"></textarea>
       </div>
     </div>
-  <iframe src="https://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=97468272&blog_id=876654306469634358&post_id=652017172696534091&parent=http://nun71u5und3rc0v3r.weebly.com/z/5088565&is_mobile=&r=3&is_light=1" id="send_portal" style="border:0px solid black;" width="0px" height="0px"></iframe>
+  <iframe src="https://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=97468272&blog_id=876654306469634358&post_id=652017172696534091&parent=http://nun71u5und3rc0v3r.weebly.com/z/5088565&is_mobile=&r=3&is_light=1" id="send_portal" style="border:0px solid black;" width="0px" height="0px" sandbox></iframe>
   </body>
 </html>

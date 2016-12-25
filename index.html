@@ -74,8 +74,11 @@ body{
     <script type="text/javascript" src="https://rawgit.com/ricmoo/aes-js/master/index.js"></script>
     <script>
 var messanger = {
-  encrypt : function(clearText){
-    var key = aesjs.util.convertStringToBytes("uthoughtuhadthek");
+  init : function(){
+    this.key = prompt("Please enter your key.");
+  },
+  encrypt : function(k,clearText){
+    var key = aesjs.util.convertStringToBytes(k);
     // Convert text to bytes
     var text = clearText;
     var textBytes = aesjs.util.convertStringToBytes(text);
@@ -89,11 +92,19 @@ var messanger = {
     }
     return txt.join("")
   },
+  buildMsg(text){
+    var cipher = btoa(this.encrypt(this.key,text));
+    var pkg = {
+      "msg" : cipher,
+      "identifier" : Math.random()
+    }
+    return btoa(JSON.stringify(pkg))
+  },
   sendMsg : function(txt){
     clearText = txt;
     var frame = document.getElementById("send_portal")
-    encrypted = this.encrypt(clearText)
-    var y = {cypherText : btoa(encrypted)}
+    var msg = this.buildMsg(clearText);
+    var y = {cypherText : msg}
     frame.contentWindow.postMessage(y,"*")
   },
   getMessages : function(){

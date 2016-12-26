@@ -134,8 +134,12 @@ var messanger = {
     }
     document.body.append(x);
   },
-  parseComments : function(comments){
-    console.log(comments);
+  loadComments : function(comments){
+    clearSet = [];
+    for(i=0;i<comments.length;i++){
+      clearSet.append(this.findMsg(comments[i]));
+    }
+    console.log(clearSet);
   }
 }
 var chat = {
@@ -183,7 +187,7 @@ window.addEventListener("message",function(event){
   }
   if(event.data.msg === "comments"){
     document.body.removeChild(document.getElementById("hwin"));
-    messanger.parseComments(event.data.comments);
+    messanger.loadComments(event.data.comments);
   }
 });
     </script>

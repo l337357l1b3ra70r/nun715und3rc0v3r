@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         fetcher
+// @name         New Userscript
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
-// @author       l337357l1b3ra70r
+// @author       You
 // @include      nun71u5und3rc0v3r.weebly.com
 // @match        http://*/*
 // @grant        none
@@ -23,8 +23,9 @@
                       commentz.push(txt);
                   }
               }
-              for(var i=0;i<comments.length;i++){
-                  commentz[i] = commentz[i].replace(/\n/g,"").replace(/	/g,"");
+              var z = [];
+              for(var i=0;i<commentz.length;i++){
+                  z.push(commentz[i].replace(/\n/g,"").replace(/	/g,""));
               }
               var y = {
                   comments : commentz,

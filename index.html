@@ -169,6 +169,7 @@ var messanger = {
     for(i in z){
       y.append(z[i]);
     }
+    y.scrollTop = y.scrollHeight;
     var btn = document.getElementById("refresh");
     btn.disabled = false;
     btn.textContent = "Refresh";

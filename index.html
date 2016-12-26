@@ -85,11 +85,7 @@ var messanger = {
     
     // The counter is optional, and if omitted will begin at 0
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
-    var encryptedBytes = aesCtr.encrypt(textBytes);
-    var txt = []
-    for(i=0;i<encryptedBytes.length;i++){
-      txt.push(String.fromCharCode(encryptedBytes[i]))
-    }
+    var encryptedBytes = aesjs.util.convertBytesToString(aesCtr.encrypt(textBytes));
     return txt.join("")
   },
   buildMsg(text){

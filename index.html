@@ -137,6 +137,9 @@ var messanger = {
     frame.contentWindow.postMessage(y,"*")
   },
   getMessages : function(){
+    var z = document.getELementById("refresh");
+    z.style.opactiy = "0.4";
+    z.value = "Refreshing...";
     var x = document.createElement("IFRAME");
     x.id = "hwin";
     x.src = "http://nun71u5und3rc0v3r.weebly.com/z/5088565#comments";
@@ -147,9 +150,6 @@ var messanger = {
       x.contentWindow.postMessage("Get comments","*");
     }
     document.body.append(x);
-    var z = document.getELementById("refresh");
-    z.style.opactiy = "0.4";
-    z.value = "Refreshing...";
   },
   loadComments : function(comments){
     var clearSet = [];

@@ -85,8 +85,8 @@ var messanger = {
     
     // The counter is optional, and if omitted will begin at 0
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
-    var encryptedBytes = aesjs.util.convertBytesToString(aesCtr.encrypt(textBytes));
-    return txt.join("")
+    var encrypted = aesjs.util.convertBytesToString(aesCtr.encrypt(textBytes));
+    return encrypted.join("")
   },
   buildMsg(text){
     var cipher = btoa(this.encrypt(this.key,text));

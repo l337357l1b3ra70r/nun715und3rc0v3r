@@ -96,6 +96,8 @@ var messanger = {
     for(i=0;i<text.length;i++){
       textBytes.push(text.charCodeAt(i));
     }
+    console.log(text);
+    console.log(textBytes);
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
     var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));
     return decrypted

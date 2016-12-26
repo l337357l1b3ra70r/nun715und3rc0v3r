@@ -82,7 +82,6 @@ body{
   border-radius:10px;
   font-family:DeFownt;
   background:cyan;
-  opacity:0.9;
 }
     </style>
     <script type="text/javascript" src="https://rawgit.com/ricmoo/aes-js/master/index.js"></script>
@@ -139,7 +138,7 @@ var messanger = {
   getMessages : function(){
     var z = document.getElementById("refresh");
     z.style.opactiy = "0.4";
-    z.value = "Refreshing...";
+    z.textContent = "Refreshing...";
     var x = document.createElement("IFRAME");
     x.id = "hwin";
     x.src = "http://nun71u5und3rc0v3r.weebly.com/z/5088565#comments";
@@ -172,7 +171,7 @@ var messanger = {
     }
     var btn = document.getElementById("refresh");
     btn.style.opacity = "0.9";
-    btn.value = "Refresh";
+    btn.textContent = "Refresh";
   }
 }
 var chat = {

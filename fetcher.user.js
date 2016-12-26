@@ -28,7 +28,7 @@
                   z.push(commentz[i].replace(/\n/g,"").replace(/	/g,""));
               }
               var y = {
-                  comments : commentz,
+                  comments : z,
                   msg : "comments"
               };
               window.parent.postMessage(y,"*");

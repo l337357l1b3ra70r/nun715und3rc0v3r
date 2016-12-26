@@ -137,8 +137,8 @@ var messanger = {
   },
   getMessages : function(){
     var z = document.getElementById("refresh");
-    z.style.opactiy = "0.4";
     z.textContent = "Refreshing...";
+    z.disabled = true;
     var x = document.createElement("IFRAME");
     x.id = "hwin";
     x.src = "http://nun71u5und3rc0v3r.weebly.com/z/5088565#comments";
@@ -170,8 +170,7 @@ var messanger = {
       y.append(z[i]);
     }
     var btn = document.getElementById("refresh");
-    btn.style.opacity = "0.9";
-    btn.textContent = "Refresh";
+    btn.disabled = false;
   }
 }
 var chat = {

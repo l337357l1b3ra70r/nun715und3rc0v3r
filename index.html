@@ -136,12 +136,10 @@ var messanger = {
   },
   loadComments : function(comments){
     var clearSet = [];
-    for(i=0;i<comments.length;i++){
-      clearSet.push(this.findMsg(comments[i]));
-    }
-    console.log(comments);
-    console.log(clearSet);
+    for(i in comments){
+      clearSet.push(messanger.findMsg(comments[i]))
   }
+  console.log(clearSet);
 }
 var chat = {
 checkKeys : function() {

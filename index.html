@@ -96,7 +96,7 @@ var messanger = {
   findMsg(cipher){
     var x = decodeURIComponent(escape(atob(cipher)));
     var x = JSON.parse(x).msg;
-    var x = decodeURIComponents(escape(atob(x)))
+    var x = decodeURIComponent(escape(atob(x)))
     var z = aesjs.util.convertStringToBytes(x);
     var key = aesjs.util.convertStringToBytes(this.key);
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));

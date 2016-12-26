@@ -85,7 +85,7 @@ var messanger = {
     var encrypted = aesCtr.encrypt(textBytes);
     var z = [];
     for(i=0;i<encrypted.length;i++){
-      z.push(String.fromCharCode(encrypted[i]);
+      z.push(String.fromCharCode(encrypted[i]));
     }
     return z.join("")
   },

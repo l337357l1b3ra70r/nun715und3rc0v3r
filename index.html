@@ -99,8 +99,8 @@ var messanger = {
     console.log(text);
     console.log(textBytes);
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
-    var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));
-    return decrypted
+    var decrypted = aesCtr.decrypt(textBytes)
+    return aesjs.util.convertBytesToString(decrypted)
   },
   buildMsg(text){
     var cipher = btoa(unescape(encodeURIComponent(this.encrypt(this.key,text))));

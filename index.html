@@ -147,6 +147,9 @@ var messanger = {
       x.contentWindow.postMessage("Get comments","*");
     }
     document.body.append(x);
+    var z = document.getELementById("refresh");
+    z.style.opactiy = "0.4";
+    z.value = "Refreshing...";
   },
   loadComments : function(comments){
     var clearSet = [];
@@ -167,6 +170,9 @@ var messanger = {
     for(i in z){
       y.append(z[i]);
     }
+    var btn = document.getElementById("refresh");
+    btn.style.opacity = "0.9";
+    btn.value = "Refresh";
   }
 }
 var chat = {

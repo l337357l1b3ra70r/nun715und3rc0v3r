@@ -135,10 +135,11 @@ var messanger = {
     document.body.append(x);
   },
   loadComments : function(comments){
-    clearSet = [];
+    var clearSet = [];
     for(i=0;i<comments.length;i++){
       clearSet.push(this.findMsg(comments[i]));
     }
+    console.log(comments);
     console.log(clearSet);
   }
 }

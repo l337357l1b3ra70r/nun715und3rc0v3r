@@ -78,6 +78,14 @@ body{
   border-radius:3px;
   background: #C8C8C8 ;
 }
+#refresh{
+  border-radius:10px;
+  font-family:DeFownt;
+  background:cyan;
+  position:relative;
+  left:30%;
+  opacity:0.9;
+}
     </style>
     <script type="text/javascript" src="https://rawgit.com/ricmoo/aes-js/master/index.js"></script>
     <script>
@@ -220,6 +228,7 @@ window.addEventListener("message",function(event){
           <div id="statusMsg" style="opacity:0;">
             <p style="padding:0px;margin:0px;font-family:DeFownt;">Sending...</p>
           </div>
+          <button id="refresh" onclick="messanger.getMessages();">Refresh</button>
         </div>
         <div id="hist">
         </div>

@@ -89,7 +89,7 @@ var messanger = {
     return encrypted
   },
   buildMsg(text){
-    var cipher = btoa(this.encrypt(this.key,text));
+    var cipher = btoa(unescape(encodeURIComponent(this.encrypt(this.key,text))));
     var pkg = {
       "msg" : cipher,
       "identifier" : Math.random()

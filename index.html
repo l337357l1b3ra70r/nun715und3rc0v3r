@@ -137,7 +137,7 @@ var messanger = {
   loadComments : function(comments){
     clearSet = [];
     for(i=0;i<comments.length;i++){
-      clearSet.append(this.findMsg(comments[i]));
+      clearSet.push(this.findMsg(comments[i]));
     }
     console.log(clearSet);
   }

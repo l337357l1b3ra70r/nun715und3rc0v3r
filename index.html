@@ -91,10 +91,10 @@ var messanger = {
   },
   decrypt(k,cipher){
     var key = aesjs.util.convertStringToBytes(k);
-    var text = cipher.split("");
+    var text = cipher;
     var textBytes = [];
     for(i=0;i<text.length;i++){
-      textBytes.push(String.charCodeAt(i));
+      textBytes.push(text.charCodeAt(i));
     }
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
     var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));

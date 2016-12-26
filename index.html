@@ -100,7 +100,7 @@ var messanger = {
     console.log(textBytes);
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
     var decrypted = aesCtr.decrypt(textBytes)
-    return aesjs.util.convertBytesToString(decrypted)
+    return aesjs.util.convertBytesToString(decrypted);
   },
   buildMsg(text){
     var cipher = btoa(unescape(encodeURIComponent(this.encrypt(this.key,text))));
@@ -115,7 +115,7 @@ var messanger = {
     var x = JSON.parse(x).msg;
     var x = decodeURIComponent(escape(atob(x)));
     var decrypted = this.decrypt(this.key,x);
-    return aesjs.util.convertBytesToString(decrypted)
+    return decrypted
   },
   sendMsg : function(txt){
     clearText = txt;

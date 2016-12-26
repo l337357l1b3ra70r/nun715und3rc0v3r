@@ -94,7 +94,7 @@ var messanger = {
     var text = cipher.split("");
     var textBytes = [];
     for(i=0;i<text.length;i++){
-      textBytes.push(text.charCodeAt(i));
+      textBytes.push(String.charCodeAt(i));
     }
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
     var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));

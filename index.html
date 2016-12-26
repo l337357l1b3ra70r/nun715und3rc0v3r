@@ -155,6 +155,9 @@ var messanger = {
       z.push(x)
     }
     var y = document.getElementById("hist");
+    while (y.hasChildNodes()) {
+    y.removeChild(y.lastChild);
+    }
     for(i in z){
       y.append(z[i]);
     }

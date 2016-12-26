@@ -93,6 +93,7 @@ var messanger = {
     var key = aesjs.util.convertStringToBytes(k);
     var text = cipher;
     var textBytes = [];
+    console.log(text);
     for(i=0;i<text.length;i++){
       textBytes.push(text.charCodeAt(i));
     }

@@ -145,7 +145,17 @@ var messanger = {
     for(i in comments){
       clearSet.push(messanger.findMsg(comments[i]))
     }
-    console.log(clearSet);
+    var z = [];
+    for(i in clearSet){
+      var x = document.createElement("PRE")
+      x.className = "msg"
+      x.textContent = clearSet[i];
+      z.push(x)
+    }
+    var y = document.getElementById("hist");
+    for(i in z){
+      y.append(z[i]);
+    }
   }
 }
 var chat = {

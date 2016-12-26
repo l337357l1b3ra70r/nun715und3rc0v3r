@@ -85,6 +85,14 @@ var messanger = {
     var encrypted = aesjs.util.convertBytesToString(aesCtr.encrypt(textBytes));
     return encrypted
   },
+  decrypt(k,cipher){
+    var key = aesjs.util.convertStringToBytes(k);
+    var text = cipher;
+    var textBytes = aesjs.util.convertStringToBytes(text);
+    var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
+    var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));
+    return decrypted
+  },
   buildMsg(text){
     var cipher = btoa(unescape(encodeURIComponent(this.encrypt(this.key,text))));
     var pkg = {
@@ -94,13 +102,11 @@ var messanger = {
     return btoa(JSON.stringify(pkg))
   },
   findMsg(cipher){
-    var x = decodeURIComponent(escape(atob(cipher)));
+    var x = atob(cipher);
     var x = JSON.parse(x).msg;
     var x = decodeURIComponent(escape(atob(x)))
     var z = aesjs.util.convertStringToBytes(x);
-    var key = aesjs.util.convertStringToBytes(this.key);
-    var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
-    var decrypted = aesCtr.decrypt(z);
+    var decrypted = this.decrypt(z);
     return aesjs.util.convertBytesToString(decrypted)
   },
   sendMsg : function(txt){

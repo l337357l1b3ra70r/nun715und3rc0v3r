@@ -110,7 +110,7 @@ var messanger = {
   decrypt(k,cipher){
     var key = aesjs.util.convertStringToBytes(k);
     var text = cipher;
-    var textBytes = thus.utf8Decode(text);
+    var textBytes = this.utf8Decode(aesjs.util.convertStringToBytes(text));
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
     var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));
     return decrypted

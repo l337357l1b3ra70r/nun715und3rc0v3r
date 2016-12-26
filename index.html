@@ -93,7 +93,6 @@ var messanger = {
     var key = aesjs.util.convertStringToBytes(k);
     var text = cipher;
     var textBytes = [];
-    console.log(text);
     for(i=0;i<text.length;i++){
       textBytes.push(text.charCodeAt(i));
     }
@@ -113,7 +112,7 @@ var messanger = {
     var x = atob(cipher);
     var x = JSON.parse(x).msg;
     var x = decodeURIComponent(escape(atob(x)));
-    var decrypted = this.decrypt(x);
+    var decrypted = this.decrypt(this.key,x);
     return aesjs.util.convertBytesToString(decrypted)
   },
   sendMsg : function(txt){

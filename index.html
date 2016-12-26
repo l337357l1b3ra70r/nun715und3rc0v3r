@@ -77,40 +77,25 @@ var messanger = {
   init : function(){
     this.key = prompt("Please enter your key.");
   },
-  utf8Decode : function(bytes) {
-    var chars = [], offset = 0, length = bytes.length, c, c2, c3;
-
-    while (offset < length) {
-      c = bytes[offset];
-      c2 = bytes[offset + 1];
-      c3 = bytes[offset + 2];
-
-      if (128 > c) {
-        chars.push(String.fromCharCode(c));
-        offset += 1;
-      } else if (191 < c && c < 224) {
-        chars.push(String.fromCharCode(((c & 31) << 6) | (c2 & 63)));
-        offset += 2;
-      } else {
-        chars.push(String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63)));
-        offset += 3;
-      }
-    }
-
-    return chars.join('');
-  },
   encrypt : function(k,clearText){
     var key = aesjs.util.convertStringToBytes(k);
     var text = clearText;
     var textBytes = aesjs.util.convertStringToBytes(text);
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
-    var encrypted = aesjs.util.convertBytesToString(aesCtr.encrypt(textBytes));
-    return encrypted
+    var encrypted = aesCtr.encrypt(textBytes);
+    var z = [];
+    for(i=0;i<encrypted.length;i++){
+      z.push(encrypted.charCodeAt(i));
+    }
+    return z.join("")
   },
   decrypt(k,cipher){
     var key = aesjs.util.convertStringToBytes(k);
-    var text = cipher;
-    var textBytes = this.utf8Decode(aesjs.util.convertStringToBytes(text));
+    var text = cipher.split("");
+    var textBytes = [];
+    for(i=0;i<text.length;i++){
+      textBytes.push(String.fromCharCode(text[i]));
+    }
     var aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
     var decrypted = aesjs.util.convertBytesToString(aesCtr.decrypt(textBytes));
     return decrypted
